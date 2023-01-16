@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'AppleSDGothicNeoB';
+  src: url('/asset/font/AppleSDGothicNeo/AppleSDGothicNeoB.woff');
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeoM';
+  src: url('/asset/font/AppleSDGothicNeo/AppleSDGothicNeoM.woff');
+}
+
+* {
+  font-family: 'AppleSDGothicNeoB';
+}

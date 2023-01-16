@@ -1,0 +1,29 @@
+.page-title {
+  margin-top: 60px;
+  height: 100px;
+  width: 100%;
+  background-color: ;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+
+.todo-item:hover {
+  border-color: #0d6dfe;
+  transition: all ease-in-out .2s;
+}
+
+.todo-item {
+  border-color: rgba(0,0,0,.125);
+  transition: all ease-in-out .2s;
+}
+
+.todo-item > .card-header {
+  color: #fff;
+}
+
+.todo-item > .card-body {
+  font-family: 'AppleSDGothicNeoM';
+}
