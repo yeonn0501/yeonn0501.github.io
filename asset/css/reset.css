@@ -8,6 +8,10 @@
   src: url('/asset/font/AppleSDGothicNeo/AppleSDGothicNeoM.woff');
 }
 
-* {
+nav, #wrapper {
   font-family: 'AppleSDGothicNeoB';
+}
+
+footer {
+  font-family: 'AppleSDGothicNeoM' !important;
 }

@@ -1,16 +1,31 @@
-.page-title {
-  margin-top: 60px;
-  height: 100px;
-  width: 100%;
-  background-color: ;
+html {
+  position: relative;
+	min-height: 100%;
+	margin: 0;
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #db8484;
+  min-height: 100%;
 }
 
+footer {
+  font-family: 'AppleSDGothicNeoM';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
 
-.todo-item:hover {
+#wrapper {
+  width: 100%;
+  min-height: 100%;
+  margin-bottom: 100px;
+}
+
+.card:hover {
   border-color: #0d6dfe;
   transition: all ease-in-out .2s;
 }
@@ -20,10 +35,7 @@ body {
   transition: all ease-in-out .2s;
 }
 
-.todo-item > .card-header {
-  color: #fff;
-}
 
-.todo-item > .card-body {
+.card-body {
   font-family: 'AppleSDGothicNeoM';
 }
