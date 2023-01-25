@@ -8,9 +8,14 @@
   src: url('/asset/font/AppleSDGothicNeo/AppleSDGothicNeoM.woff');
 }
 
-nav, #wrapper {
+#wrapper, nav {
+  font-family: 'AppleSDGothicNeoM'
+}
+
+.navbar-brand, label {
   font-family: 'AppleSDGothicNeoB';
 }
+
 
 footer {
   font-family: 'AppleSDGothicNeoM' !important;
