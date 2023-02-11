@@ -35,6 +35,8 @@ function paintTodo(newTodo) {
 // 삭제 기능
 function deleteToDo(event) {
   const li = event.target.parentElement;
+  // 필터
+  // toDo 객체의 아이디와 선택한 li 의 id 가 일치하지 않는 것들만 보여준다.
   toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
   li.remove();
   saveToDos();

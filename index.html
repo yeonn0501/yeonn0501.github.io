@@ -7,12 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> 오플! 오늘의 플랜 - Today's Plans </title>
   <!-- 부트스트랩5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/asset/css/style.css">
   <link rel="stylesheet" href="/asset/css/reset.css">
   <link rel="shortcut Icon" href="/asset/img/calendar.png">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <!-- Popperjs -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 
@@ -20,7 +22,7 @@
 
 <body data-bs-theme="dark" class="bg-body text-body">
   <!-- 네비게이션바 -->
-  <nav class="navbar navbar-dark bg-body fixed-top navbar-expand-lg">
+  <nav class="navbar bg-body navbar-dark fixed-top navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand text-primary" href="/index.html">
         <img src="/asset/img/calendar.png" alt="" width="24" class="d-inline-block align-text-top">&nbsp;오플!</a>
@@ -52,55 +54,64 @@
     </div>
   </nav>
   <div class="container-fluid" id="wrapper">
-    <form class="row g-4 mt-5" id="todoForm">
-      <div class="col-sm-4 col-md-2">
-        <label for="Category" class="form-label"><span class="text-danger">*</span>&nbsp;카테고리</label>
-        <select id="Category" class="form-select bg-dark" name="category">
-          <option value="개인 프로젝트">개인 프로젝트</option>
-          <option value="공부">공부</option>
-          <option value="회사 프로젝트">회사 프로젝트</option>
-          <option value="기타">기타</option>
-        </select>
-      </div>
-      <div class="col-sm-8 col-md-4 col-lg-2">
-        <label for="Title" class="form-label"><span class="text-danger">*</span>&nbsp;할 일</label>
-        <input type="text" class="form-control bg-dark" id="Title" name="title" minlength="1" maxlength="30" placeholder="30자 이내">
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <label for="Desc" class="form-label">설명</label>
-        <input type="text" class="form-control bg-dark" id="Desc" name="desc" maxlength="100" placeholder="100자 이내">
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-1">
-        <label for="startTime" class="form-label datetime">시작</label>
-        <input type="text" class="form-control bg-dark time" id="startTime" minlength="2" maxlength="5" placeholder="2또는4자리">
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-1">
-        <label for="endTime" class="form-label datetime">완료</label>
-        <input type="text" class="form-control bg-dark time" id="endTime" minlength="2" maxlength="5" placeholder="2또는4자리">
-      </div>
-
-      <div class="col-lg-1 d-grid gap-2">
-        <input type="submit" class="btn btn-primary" id="insertBtn" value="저장" name="insertBtn" />
-      </div>
-      <div class="col-lg-1 d-grid gap-2">
-        <input type="button" class="btn btn-secondary" id="cancleBtn" value="취소" name="cancleBtn" />
-      </div>
-    </form>
-    <div class="row" id="Row">
-      <div id="todoItem" class="d-none todo-item col-12 col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4">
-        <div class="card mt-4">
-          <div class="card-header todo-item-title">
-            <div id="todoTitle" class="d-inline float-left align-middle">
-            </div>
-            <div class="chk-success d-inline float-end">
-              <input class="todo-status form-check-input" type="checkbox" name="todoCheck" onChange="onChangeCheckBox(this);">
-              <label class="form-check-label" for="todoCheck">
-              </label>
-            </div>
-          </div>
-          <div id="todoDesc" class="card-body todo-item-desc">
-          </div>
+    <div class="form-wrap collapse show" id="formWrap">
+      <form class="row g-4 mt-5" id="todoForm">
+        <div class="col-sm-4 col-md-2">
+          <label for="Category" class="form-label"><span class="text-danger">*</span>&nbsp;카테고리</label>
+          <select id="Category" class="form-select bg-dark" name="category">
+            <option value="개인 프로젝트">개인 프로젝트</option>
+            <option value="공부">공부</option>
+            <option value="회사 프로젝트">회사 프로젝트</option>
+            <option value="기타">기타</option>
+          </select>
         </div>
+        <div class="col-sm-8 col-md-4 col-lg-2">
+          <label for="Title" class="form-label"><span class="text-danger">*</span>&nbsp;할 일</label>
+          <input type="text" class="form-control bg-dark" id="Title" name="title" minlength="1" maxlength="30"
+            placeholder="30자 이내">
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <label for="Desc" class="form-label">설명</label>
+          <input type="text" class="form-control bg-dark" id="Desc" name="desc" maxlength="100" placeholder="100자 이내">
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-1">
+          <label for="startTime" class="form-label datetime">시작 시간</label>
+          <input type="text" class="form-control bg-dark time" id="startTime" maxlength="5" onkeyup="enterkey()"
+            placeholder="2또는4자리">
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-1">
+          <label for="endTime" class="form-label datetime">완료 시간</label>
+          <input type="text" class="form-control bg-dark time" id="endTime" maxlength="5" onkeyup="enterkey()"
+            placeholder="2또는4자리">
+        </div>
+
+        <div class="col-lg-1 d-grid gap-2">
+          <input type="submit" class="btn btn-primary" id="insertBtn" value="등록" name="insertBtn" />
+        </div>
+        <div class="col-lg-1 d-grid gap-2">
+          <input type="button" class="btn btn-secondary" id="clearBtn" value="취소" name="clearBtn" />
+        </div>
+      </form>
+    </div>
+    <div class="row g-4 mt-1" id="Row">
+      <div class="text-center">
+        <button type="button" class="btn btn-dark col-12 " id="toggleBtn" data-bs-toggle="collapse" data-bs-target="#formWrap"
+          aria-expanded="true" aria-controls="formWrap"><i id="arrowIcon" class="text-white bi bi-chevron-up"></i></button>
+      </div>
+    </div>
+  </div>
+  <div id="todoItem" class="d-none todo-item col-12 col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4">
+    <div class="card">
+      <div class="card-header todo-item-title">
+        <div id="todoTitle" class="d-inline float-left align-middle">
+        </div>
+        <div class="chk-success d-inline float-end">
+          <input class="todo-status form-check-input" type="checkbox" name="todoCheck">
+          <label class="form-check-label" for="todoCheck">
+          </label>
+        </div>
+      </div>
+      <div id="todoDesc" class="card-body todo-item-desc">
       </div>
     </div>
   </div>
@@ -111,6 +122,7 @@
     </div>
   </footer>
   <script src="/asset/js/app.js"></script>
+  <script src="/asset/js/collapse-form.js"></script>
 </body>
 
 </html>
