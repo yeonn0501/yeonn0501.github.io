@@ -76,13 +76,11 @@
         </div>
         <div class="col-6 col-sm-6 col-md-6 col-lg-1">
           <label for="startTime" class="form-label datetime">시작 시간</label>
-          <input type="text" class="form-control bg-dark time" id="startTime" maxlength="5" onkeyup="enterkey()"
-            placeholder="2또는4자리">
+          <input type="text" class="form-control bg-dark time" id="startTime" maxlength="5" placeholder="2또는4자리">
         </div>
         <div class="col-6 col-sm-6 col-md-6 col-lg-1">
           <label for="endTime" class="form-label datetime">완료 시간</label>
-          <input type="text" class="form-control bg-dark time" id="endTime" maxlength="5" onkeyup="enterkey()"
-            placeholder="2또는4자리">
+          <input type="text" class="form-control bg-dark time" id="endTime" maxlength="5" placeholder="2또는4자리">
         </div>
 
         <div class="col-lg-1 d-grid gap-2">
@@ -93,22 +91,41 @@
         </div>
       </form>
     </div>
-    <div class="row g-4 mt-1" id="Row">
-      <div class="text-center">
-        <button type="button" class="btn btn-dark col-12 " id="toggleBtn" data-bs-toggle="collapse" data-bs-target="#formWrap"
-          aria-expanded="true" aria-controls="formWrap"><i id="arrowIcon" class="text-white bi bi-chevron-up"></i></button>
+    <div class="text-center d-lg-none collapse-wrap">
+      <button type="button" class="btn btn-dark col-12 " id="toggleBtn" data-bs-toggle="collapse" data-bs-target="#formWrap"
+      aria-expanded="true" aria-controls="formWrap"><i id="arrowIcon" class="text-white bi bi-chevron-up"></i></button>
+    </div>
+    <div class="delete-wrap" id="deleteBtn">삭제</div>
+    <div class="status-wrap mt-2" id="statusRadioWrap">
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="statusRadio" id="btncheck1" value="0" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btncheck1">진행중(<span id="spanSumTodos"></span>)</label>
+
+        <input type="radio" class="btn-check" name="statusRadio" id="btncheck2" value="1" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btncheck2">완료(<span id="spanSumDone"></span>)</label>
+        
+        <input type="radio" class="btn-check" name="statusRadio" id="btncheck3" value="2" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btncheck3">전체(<span id="spanSumTotal"></span>)</label>
       </div>
+    </div>
+    <div class="row g-4 mt-1" id="Row">
+    </div>
+    <div class="row d-none g-4 mt-1" id="RowDone">
     </div>
   </div>
   <div id="todoItem" class="d-none todo-item col-12 col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4">
     <div class="card">
-      <div class="card-header todo-item-title">
-        <div id="todoTitle" class="d-inline float-left align-middle">
+      <div class="card-header todo-item-title align-middle">
+        <div id="todoTitle" class="d-inline float-left">
         </div>
         <div class="chk-success d-inline float-end">
           <input class="todo-status form-check-input" type="checkbox" name="todoCheck">
-          <label class="form-check-label" for="todoCheck">
-          </label>
+          <label class="form-check-label" for="todoCheck"></label>
+        </div>
+        <div class="d-inline float-end" style="margin-right: 10px">
+          <span id="todoStart"></span>
+          <span id="period"> ~ </span>
+          <span id="todoEnd"></span>
         </div>
       </div>
       <div id="todoDesc" class="card-body todo-item-desc">

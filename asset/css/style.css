@@ -25,7 +25,9 @@ footer {
   min-height: 100%;
   margin-bottom: 100px;
 }
-
+.collapse-wrap{
+  margin-top: 30px;
+}
 .card:hover {
   border-color: #0d6dfe;
   transition: all ease-in-out .2s;
@@ -41,3 +43,23 @@ footer {
   font-family: 'AppleSDGothicNeoM';
 }
 
+.delete-wrap {
+  position:relative;
+  top: 40px;
+  width: 50px;
+  left: 20px;
+}
+
+/* 반응형 css */
+
+@media (max-width: 767px) {
+  .status-wrap {
+    text-align: right;
+  }
+}
+
+@media (min-width: 768px) {
+  .status-wrap {
+    text-align: center;
+  }
+}
